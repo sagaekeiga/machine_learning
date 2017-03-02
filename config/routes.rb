@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'twitters/index'
+  root 'twitters#index'
 
   get 'twitters/show'
 
@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'twitters/edit'
 
   get 'twitters/destroy'
+  
+  get 'twitters/crawl'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
