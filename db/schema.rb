@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302082740) do
+ActiveRecord::Schema.define(version: 20170303052059) do
 
-  create_table "twitters", force: :cascade do |t|
+  create_table "machines", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
