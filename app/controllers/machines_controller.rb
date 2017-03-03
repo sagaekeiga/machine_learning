@@ -29,7 +29,8 @@ class MachinesController < ApplicationController
     
     word1 = "テロ" # 検索したいワード
     word2 = "ミャンマー" # 検索したいワード
-    word_sum = word1 + word2
+    word3 = "日本" # 検索したいワード
+    word_sum = word1 + word2 + word3
 
     # word を含む tweet を 10 件取得する
     results = twClient.search(word_sum, :count => 10, :result_type => "recent")

@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :locations
+resources :machines
+
+    root to: "locations#index"
+  end
+
+  get 'maps/index'
+
   root 'machines#index'
 
   get 'machines/show'
