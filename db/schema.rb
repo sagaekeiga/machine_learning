@@ -13,7 +13,10 @@
 ActiveRecord::Schema.define(version: 20170303052059) do
 
   create_table "machines", force: :cascade do |t|
-    t.text     "content"
+    t.date     "date"
+    t.text     "tweet"
+    t.text     "name"
+    t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

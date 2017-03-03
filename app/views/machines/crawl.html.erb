@@ -1,1 +1,6 @@
-<%= @tweets %>
+<% @mashines.each do |tweet| %>
+   <%= tweet.date %><br>
+   <%= tweet.tweet %><br>
+   <%= tweet.name %><br>
+   <%= tweet.text %><br><br>
+<% end %>

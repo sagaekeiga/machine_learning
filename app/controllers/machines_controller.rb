@@ -1,4 +1,6 @@
 class MachinesController < ApplicationController
+  require 'twitter'
+
   def index
   end
 
@@ -23,24 +25,25 @@ class MachinesController < ApplicationController
     	:access_token_secret => 'x7m24zjdrJyhe1w8dmt5paIPEgfnSTmrCjLXJ8CnASjQd'
     }
     
-    client = Twitter::REST::Client.new(config)
+    twClient = Twitter::REST::Client.new(config)
     
-    @tweets = []
-    client.user_timeline('dkfj').each {|tweet|
-    	# Tweet時間
-    	puts tweet.created_at
+    word1 = "テロ" # 検索したいワード
+    word2 = "ミャンマー" # 検索したいワード
+    word_sum = word1 + word2
+
+    # word を含む tweet を 10 件取得する
+    results = twClient.search(word_sum, :count => 10, :result_type => "recent")
+
+    results.attrs[:statuses].each do |tweet|
+      @machine = Machine.new
+      @machine.date = Time.parse(tweet[:created_at])
+      @machine.tweet = tweet[:id]
+      @machine.name = "@" + tweet[:user][:screen_name]
+      @machine.text = tweet[:text]
+      @machine.save!
+    end
     
-    	# Tweet本文
-    	@tweets = tweet.text
-    
-    	# Retweet数
-    	puts "Retweetされた数 : " + tweet.retweet_count.to_s
-    
-    	# お気に入りされた数
-    	puts "お気に入りされた数 : " + tweet.favorite_count.to_s
-    
-    	# 位置情報
-    	puts "位置情報 : " + tweet.geo if !tweet.geo.nil?
-    }
+    @mashines = Machine.all
+
   end
 end
