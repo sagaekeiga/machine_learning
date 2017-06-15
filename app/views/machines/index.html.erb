@@ -1,1 +1,18 @@
-<%= link_to "crawl", machines_crawl_path %>
+
+<%= form_for :word, url: machines_crawl_path do |f| %>
+  <p>
+    <%= f.text_field :word1, class: 'form-control input-sm', style: "width:500px;", :placeholder => "キーワード1" %>
+  </p>
+ 
+  <p>
+    <%= f.text_area :word2, class: 'form-control input-sm', style: "width:500px;", :placeholder => "キーワード2" %>
+  </p>
+  
+   <p>
+    <%= f.text_area :word3, class: 'form-control input-sm', style: "width:500px;", :placeholder => "キーワード3" %>
+  </p>
+
+  <p>
+    <%= f.submit "crawl", class: 'btn btn-primary' %>
+  </p>
+<% end %>

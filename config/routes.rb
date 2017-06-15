@@ -18,7 +18,7 @@ resources :machines
 
   get 'machines/destroy'
   
-  get 'machines/crawl'
+  post 'machines/crawl'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

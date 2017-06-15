@@ -7,6 +7,5 @@ class MapsController < ApplicationController
       marker.infowindow location.description
       marker.json({title: location.title})
     end
-    @location = Location.find(1)
   end
 end

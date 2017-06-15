@@ -10,11 +10,11 @@
 
 set :branch, 'master'
 
-role :app, %w{anime@160.16.198.30}
-role :web, %w{anime@160.16.198.30}
-role :db,  %w{anime@160.16.198.30}
+role :app, %w{root@153.127.217.178}
+role :web, %w{root@153.127.217.178}
+role :db,  %w{root@153.127.217.178}
 
-server '160.16.198.30', user: 'anime', roles: %w{web app db}
+server '153.127.217.178', user: 'root', roles: %w{web app db}
 
 set :ssh_options, {
     forward_agent: true,

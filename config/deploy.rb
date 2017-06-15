@@ -1,12 +1,11 @@
 # config valid only for current version of Capistrano
 lock "3.7.2"
 
-set :application, "machine_learning"
+set :application, "terror"
 set :repo_url, 'https://github.com/sagaekeiga/machine_learning.git'
-set :deploy_to, '/home/anime/machine_learning/'
+set :deploy_to, '/home/solacom_test/work'
 
 set :keep_releases, 5
-set :ssh_options, :port => "61203"
 
 set :rbenv_type, :system # :system or :user
 set :rbenv_ruby, '2.3.1'

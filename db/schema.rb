@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170303074306) do
     t.text     "tweet"
     t.text     "name"
     t.text     "text"
+    t.text     "geo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

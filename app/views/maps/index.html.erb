@@ -4,18 +4,10 @@
 
 
 <script type="text/javascript">
+var infoWindow;
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers([
-    {
-      "lat": <%= @location.latitude %>,
-      "lng": <%= @location.longitude%>,
-      "picture": {
-        "width":  32,
-        "height": 32
-      },
-      "infowindow": "hello!"
-    },
     {
       "lat": 35.6954806,
       "lng": 139.76325010000005,
