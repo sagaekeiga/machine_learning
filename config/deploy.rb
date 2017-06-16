@@ -3,15 +3,21 @@ lock "3.7.2"
 
 set :application, "terror"
 set :repo_url, 'https://github.com/sagaekeiga/machine_learning.git'
-set :deploy_to, '/home/solacom_test/work'
+set :deploy_to, '/home/solacom_test/work/terror'
 
 set :keep_releases, 5
 
 set :rbenv_type, :system # :system or :user
-set :rbenv_ruby, '2.3.1'
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-set :rbenv_roles, :all # default value
+set :rbenv_custom_path, '~/.rbenv'
+set :rbenv_roles, :all
+set :rbenv_ruby, '2.3.1'
+set :rbenv_path, '/home/solacom_test/.rbenv'
+
+set :bundle_gemfile, -> { release_path.join('Gemfile') }
+set :bundle_dir, -> { shared_path.join('bundle') }
+set :bundle_flags, '--deployment --quiet'
+set :bundle_binstubs, -> { shared_path.join('bin') }
 
 set :linked_dirs, %w{bin log tmp/backup tmp/pids tmp/cache tmp/sockets vendor/bundle}
 set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"

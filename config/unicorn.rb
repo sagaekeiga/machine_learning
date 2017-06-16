@@ -1,5 +1,5 @@
 worker_processes 2
-working_directory "/home/solacom_test/work/machine_learning/current"
+working_directory "/home/solacom_test/work/terror/current"
 
 listen "/var/run/unicorn/unicorn_machine_learning.sock"
 pid "/var/run/unicorn/unicorn_machine_learning.pid"
