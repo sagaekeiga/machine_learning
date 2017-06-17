@@ -34,19 +34,26 @@ class MachinesController < ApplicationController
     word_sum = word1 + word2 + word3
 
     # word を含む tweet を 10 件取得する
-    results = twClient.search(word_sum, :count => 100, :result_type => "recent")
+    results = twClient.search(word_sum, :count => 10, :result_type => "recent", :include_entities => true)
 
-    results.attrs[:statuses].each do |tweet|
-      @machine = Machine.new
-      @machine.date = Time.parse(tweet[:created_at])
-      @machine.tweet = tweet[:id]
-      @machine.name = "@" + tweet[:user][:screen_name]
-      @machine.text = tweet[:text]
-      @machine.geo = tweet[:user][:location]
-      @machine.save!
+    results.take(1000).each do |tweet|
+      tweet.media.each do |media| #画像付きのツイート取得
+        @machine = Machine.new
+        @machine.tweet = tweet[:id]
+        @machine.name = "@" + tweet[:user][:screen_name]
+        @machine.text = tweet[:text]
+        @machine.geo = tweet[:coordinates]
+        @machine.url = media.media_url
+        
+        @machine.save!
+      end
     end
     
     @mashines = Machine.all
 
+  end
+  
+  def summury
+    @mashines = Machine.all
   end
 end

@@ -14,10 +14,7 @@ set :rbenv_roles, :all
 set :rbenv_ruby, '2.3.1'
 set :rbenv_path, '/home/solacom_test/.rbenv'
 
-set :bundle_gemfile, -> { release_path.join('Gemfile') }
-set :bundle_dir, -> { shared_path.join('bundle') }
-set :bundle_flags, '--deployment --quiet'
-set :bundle_binstubs, -> { shared_path.join('bin') }
+
 
 set :linked_dirs, %w{bin log tmp/backup tmp/pids tmp/cache tmp/sockets vendor/bundle}
 set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"

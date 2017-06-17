@@ -38,8 +38,8 @@ gem 'oauth'
 gem "gmaps4rails"
 gem "geocoder"
 
-gem 'administrate'
-gem 'bourbon'
+gem 'whenever', require: false
+
 
 gem 'twitter-bootstrap-rails'
 group :development, :test do

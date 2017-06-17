@@ -6,6 +6,7 @@ class CreateMachines < ActiveRecord::Migration[5.0]
       t.text :name
       t.text :text
       t.text :geo
+      t.text :url
 
       t.timestamps
     end

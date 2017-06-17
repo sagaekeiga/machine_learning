@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    resources :locations
-resources :machines
 
-    root to: "locations#index"
-  end
 
   get 'maps/index'
 
@@ -15,6 +10,7 @@ resources :machines
   get 'machines/new'
 
   get 'machines/edit'
+  get 'machines/summury'
 
   get 'machines/destroy'
   
