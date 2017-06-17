@@ -6,12 +6,11 @@ require 'capistrano/rails'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/rbenv'
-require 'capistrano/bundler'
 require 'whenever/capistrano'
+require 'capistrano/bundler'
 
 
 # Include default deployment tasks
-require "capistrano/deploy"
 
 # Load the SCM plugin appropriate to your project:
 #
