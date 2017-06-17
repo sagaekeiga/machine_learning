@@ -5,7 +5,7 @@
 
 # Example:
 #
-set :output, '/log/crontab.log'
+set :output, '/home/solacom_test/work/terror/current/log/crontab.log'
 set :environment, :production
 
 every 1.minute do
