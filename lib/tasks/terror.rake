@@ -1,5 +1,5 @@
 namespace :terror do
   task :sample do
-    puts "Hello World"
+    logger.debug("Hello, world!")
   end
 end
