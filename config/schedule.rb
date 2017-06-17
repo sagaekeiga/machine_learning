@@ -6,12 +6,12 @@
 # Example:
 #
 set :output, '#{path}/log/crontab.log'
-set :environment, :development
+set :environment, :production
 env :PATH, ENV['PATH']
 job_type :rbenv_rake, %q!eval "$(rbenv init -)"; cd :path && :environment_variable=:environment bundle exec rake :task --silent :output!
 
 every 1.minute do
-  rake 'terror:sample RAILS_ENV=development'
+  rake 'terror:sample RAILS_ENV=production'
 end
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
