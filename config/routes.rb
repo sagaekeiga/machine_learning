@@ -1,21 +1,10 @@
 Rails.application.routes.draw do
-
-
-  get 'maps/index'
-
-  root 'machines#index'
-
-  get 'machines/show'
-
-  get 'machines/new'
-
-  get 'machines/edit'
-  get 'machines/summury'
-
-  get 'machines/destroy'
+  root 'pages#index'
+  get 'machines/index'
   
   post 'machines/crawl'
 
+  resources :words
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

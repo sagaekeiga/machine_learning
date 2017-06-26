@@ -4,19 +4,6 @@ class MachinesController < ApplicationController
   def index
     @machines = Machine.all
   end
-
-
-  def show
-  end
-
-  def new
-  end
-
-  def edit
-  end
-
-  def destroy
-  end
   
   def crawl
     config = {
@@ -44,7 +31,6 @@ class MachinesController < ApplicationController
         @machine.text = tweet[:text]
         @machine.geo = tweet[:coordinates]
         @machine.url = media.media_url
-        
         @machine.save!
       end
     end
@@ -52,8 +38,5 @@ class MachinesController < ApplicationController
     @mashines = Machine.all
 
   end
-  
-  def summury
-    @mashines = Machine.all
-  end
+
 end

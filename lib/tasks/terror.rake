@@ -1,5 +1,5 @@
 namespace :terror do
   task :sample do
-    logger.debug("Hello, world!")
+    Rails.logger.debug("params")
   end
 end

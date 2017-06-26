@@ -1,8 +1,8 @@
 <% @mashines.each do |tweet| %>
-   <%= tweet.date %><br>
-   <%= tweet.tweet %><br>
-   <%= tweet.name %><br>
-   <%= tweet.text %><br>
-   <%= tweet.geo %><br>
+   Date:<%= tweet.date %><br>
+   <%= "Tweet:" + tweet.tweet %><br>
+   <%= "Nama:" + tweet.name %><br>
+   <%= "Text:" + tweet.text %><br>
+   Geo:<%= tweet.geo %><br>
    <%= image_tag(tweet.url) %><br><br>
 <% end %>
