@@ -2,7 +2,7 @@
 
 require 'natto'
 
-txt = '明日は明日の風が吹く'
+txt = '仙台は風が強い'
 
 natto = Natto::MeCab.new
 natto.parse(txt) do |n|
