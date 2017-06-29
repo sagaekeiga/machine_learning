@@ -10,6 +10,7 @@ set :environment, :production
 
 every 1.minute do
   rake 'terror:sample RAILS_ENV=production'
+  rake 'terror:test RAILS_ENV=production'
 end
 # every 2.hours do
 #   command "/usr/bin/some_great_command"

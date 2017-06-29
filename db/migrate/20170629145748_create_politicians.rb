@@ -9,6 +9,7 @@ class CreatePoliticians < ActiveRecord::Migration[5.0]
       t.text :status
       t.text :vote
       t.text :election
+      t.text :switch
 
       t.timestamps
     end

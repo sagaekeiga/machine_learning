@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170629145748) do
     t.text     "status"
     t.text     "vote"
     t.text     "election"
+    t.text     "switch"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
