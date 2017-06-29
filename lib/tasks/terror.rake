@@ -1,8 +1,8 @@
 namespace :terror do
   task :sample do
-    Rails.logger.debug("params")
+    puts "params"
   end
   task :test do
-    Rails.logger.debug("params")
+    puts "OK"
   end
 end
