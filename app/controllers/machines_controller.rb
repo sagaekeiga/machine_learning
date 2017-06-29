@@ -21,7 +21,7 @@ class MachinesController < ApplicationController
     word_sum = word1 + word2 + word3
 
     # word を含む tweet を 10 件取得する
-    results = twClient.search(word_sum, :count => 10, :result_type => "recent", :include_entities => true)
+    results = twClient.search(word_sum, :count => 100, :result_type => "recent", :include_entities => true)
 
     results.take(1000).each do |tweet|
       tweet.media.each do |media| #画像付きのツイート取得
@@ -31,7 +31,20 @@ class MachinesController < ApplicationController
         @machine.text = tweet[:text]
         @machine.geo = tweet[:coordinates]
         @machine.url = media.media_url
-        @machine.save!
+        
+        txt = "#{tweet[:text]}" ##　形態素解析
+        
+        natto = Natto::MeCab.new
+        natto.parse(txt) do |n|
+          if n.feature.include?("地域") ##　地域が含まれればインスタンスに追加
+              puts @machine[:mecab] = "#{n.surface}: #{n.feature}"
+          end
+        end
+        
+        if !tweet[:coordinates].nil? || !@machine[:mecab].nil? #位置情報が付いていれば保存
+          @machine.save!
+        end
+        
       end
     end
     

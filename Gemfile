@@ -28,7 +28,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'natto'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -39,7 +38,7 @@ gem 'oauth'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 
 gem 'whenever', require: false
-
+gem 'natto'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

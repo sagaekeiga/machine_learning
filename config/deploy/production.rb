@@ -10,9 +10,9 @@
 
 set :branch, 'master'
 
-role :app, %w{solacom@153.127.217.178}
-role :web, %w{solacom@153.127.217.178}
-role :db,  %w{solacom@153.127.217.178}
+role :app, %w{solacom_test@153.127.217.178}
+role :web, %w{solacom_test@153.127.217.178}
+role :db,  %w{solacom_test@153.127.217.178}
 
 server '153.127.217.178', user: 'solacom', roles: %w{web app db}
 

@@ -6,5 +6,7 @@ txt = '仙台は風が強い'
 
 natto = Natto::MeCab.new
 natto.parse(txt) do |n|
-  puts "#{n.surface}: #{n.feature}"
+  if n.feature.include?("地域")
+      puts "#{n.surface}: #{n.feature}"
+  end
 end
