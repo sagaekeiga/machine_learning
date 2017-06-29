@@ -1,0 +1,35 @@
+<table class="ui celled table">
+  <thead>
+    <tr>
+    <th>ID</th>
+    <th>名前</th>
+    <th>年齢</th>
+    <th>画像</th>
+    <th>党派</th>
+    <th>職業</th>
+    <th>新/現/元</th>
+    <th>得票数</th>
+    <th>党派</th>
+    <th>管理</th>
+    </tr>
+ </thead>
+  <tbody>
+    <% @politicians.each do |politician| %>
+        <tr>
+         <td ><%= politician.id %></td>
+         <td><%= link_to"#{politician.name}", politician, { :target => "_blank"}  %></td>
+         <td ><%= politician.age %></td>
+         <td ><%= image_tag(politician.image, :size => '50x50') if !politician.image.nil? %></td>
+         <td ><%= politician.party %></td>
+         <td ><%= politician.occupation %></td>
+         <td ><%= politician.status %></td>
+         <td ><%= politician.vote %></td>
+         <td ><%= politician.election %></td>
+         <td>
+          <%= link_to "編集", edit_politician_path(politician.id), { :class => "ui olive button" } %>
+          <%= link_to "削除", politician, { :class => "ui red button", method: :delete, data: { confirm: "本当に削除してもいいですか？" }} %>
+         </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
