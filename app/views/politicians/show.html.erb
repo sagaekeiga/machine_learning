@@ -53,9 +53,8 @@
         </table>
         <% @machines.each do |tweet| %>
         <div class="ui raised segment">
-           ID:<%= tweet.id %><br>
+           tweet_id:<%= tweet.tweet_id %><br>
            Date:<%= tweet.date %><br>
-           <%= "Tweet:" + tweet.tweet %><br>
            <%= "Nama:" + tweet.name %><br>
            <%= "Text:" + tweet.text %><br>
            Geo:<%= tweet.geo %><br>

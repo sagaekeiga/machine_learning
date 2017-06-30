@@ -61,12 +61,16 @@ class PoliticiansController < ApplicationController
             # word を含む tweet を 10 件取得する
             results = @twClient.search(politician.name, :count => 20, :result_type => "recent")
             results.take(20).each do |tweet|
-                @machine = Machine.new
-                @machine.politician = politician.name
-                @machine.tweet = tweet[:id]
-                @machine.name = "@" + tweet[:user][:screen_name]
-                @machine.text = tweet[:text]
-                @machine.save!
+                begin
+                    @machine = Machine.new
+                    @machine.tweet_id = tweet[:id]
+                    @machine.politician = politician.name
+                    @machine.name = "@" + tweet[:user][:screen_name]
+                    @machine.text = tweet[:text]
+                    @machine.save!
+                rescue => e
+                      p "エラー"
+                end
             end
         end
         

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20170629145748) do
 
   create_table "machines", force: :cascade do |t|
     t.date     "date"
-    t.text     "tweet"
+    t.bigint   "tweet_id"
     t.text     "name"
     t.text     "text"
     t.text     "geo"

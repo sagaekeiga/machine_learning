@@ -8,7 +8,7 @@
 set :output, '/home/solacom_test/work/terror/current/log/crontab.log'
 set :environment, :production
 
-every 1.minute do
+every 5.minute do
   rake 'terror:sample RAILS_ENV=production'
   rake 'terror:test RAILS_ENV=production'
 end
