@@ -10,6 +10,7 @@
     <th>新/現/元</th>
     <th>得票数</th>
     <th>党派</th>
+    <th>スイッチ</th>
     <th>管理</th>
     </tr>
  </thead>
@@ -25,6 +26,13 @@
          <td ><%= politician.status %></td>
          <td ><%= politician.vote %></td>
          <td ><%= politician.election %></td>
+         <td >
+             <% if politician.switch == "オン" %>
+                 <div class="ui primary button"><%= politician.switch %></div>
+             <% elsif politician.switch == "オフ" %>
+                 <div class="ui button"><%= politician.switch %></div>
+             <% end %>
+         </td>
          <td>
           <%= link_to "編集", edit_politician_path(politician.id), { :class => "ui olive button" } %>
           <%= link_to "削除", politician, { :class => "ui red button", method: :delete, data: { confirm: "本当に削除してもいいですか？" }} %>

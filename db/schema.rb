@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170629145748) do
     t.text     "geo"
     t.text     "url"
     t.text     "mecab"
+    t.text     "politician"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

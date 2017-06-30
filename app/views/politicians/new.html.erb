@@ -57,6 +57,10 @@
               <%= f.select :election,  options_for_select(["当選", "落選"]), {}, { class: 'ui fluid dropdown' } %>
             </div>
         
+            <div class="field">
+              <label>スイッチ</label>
+              <%= f.select :switch,  options_for_select(["オン", "オフ"]), {}, { class: 'ui fluid dropdown' } %>
+            </div>
             
           <div class="actions">
             <%= f.submit "登録", class: 'ui button'%>

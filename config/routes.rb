@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'machines/index'
   
   post 'machines/crawl'
+  get 'politicians/scraping'
 
   resources :words
   resources :politicians
